@@ -1,4 +1,19 @@
+
+
+![Snap 2024-09-16 at 1 52 40 PM](https://github.com/user-attachments/assets/bcfe606e-21d4-4630-8106-8ac04f8e24d5)
+
+
+
 # sed-tool
+
+
+
+ To add 1st line or all
+```
+Root101@MBP-Lab kmasstowif % ssed -i '1s/^/00000000000000000000000000000000000000000000000/' last108k.txt 
+Root101@MBP-Lab kmasstowif % ssed -i 's/^/00000000000000000000000000000000000000000000000/' last108k.txt 
+```
+
 
 hi I need to add 0 in 1500625 lines. any command to it
 ChatGPT said:
