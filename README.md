@@ -170,3 +170,33 @@ cat filename > output_file
 ```
 
 Would you like help with anything more specific?
+
+
+To comment out multiple lines in a Bash script using `sed`, you can automate the process of inserting a `#` at the beginning of each line within a specific range.
+
+Here’s how you can do it with `sed`:
+
+### Example:
+If you want to comment lines 4 to 10 in your script:
+
+```bash
+sed '4,10 s/^/# /' script.sh
+```
+
+This command will:
+
+- Select lines 4 to 10.
+- Use the `s/^/# /` substitution to add a `#` at the beginning of each selected line.
+
+To make the changes directly in the file (in-place), use the `-i` option:
+
+```bash
+sed -i '4,10 s/^/# /' script.sh
+```
+
+### Breakdown:
+- `-i`: Edit the file in-place.
+- `4,10`: Specifies the range of lines (from line 4 to line 10).
+- `s/^/# /`: Substitutes the beginning of each line (`^`) with `# `.
+
+This will comment out the lines in the specified range in your script file.
