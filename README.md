@@ -6,6 +6,46 @@
 
 # sed-tool
 
+To extract exactly **32 characters (digits or any characters)** from **each line** of a file using `sed`, you can use:
+
+```bash
+sed 's/^\(.\{34\}\).*/\1/' filename
+```
+
+### Explanation:
+
+* `^` = start of the line
+* `\(.\{32\}\)` = capture the **first 32 characters**
+* `.*` = match the rest of the line
+* `\1` = only print the first captured group (i.e., first 32 characters)
+
+---
+
+### Example:
+
+Input (`example.txt`):
+
+```
+1234567890123456789012345678901234567890
+abcdefghijABCDEFGHIJ1234567890xyz
+shortline
+```
+
+Command:
+
+```bash
+sed 's/^\(.\{32\}\).*/\1/' example.txt
+```
+
+Output:
+
+```
+12345678901234567890123456789012
+abcdefghijABCDEFGHIJ1234567890
+shortline
+```
+
+> If a line has fewer than 32 characters, it will print the full line as-is.
 
 
  To add 1st line or all
